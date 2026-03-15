@@ -44,6 +44,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: LoginWidget.routeName,
           path: LoginWidget.routePath,
           builder: (context, params) => LoginWidget(),
+        ),
+        FFRoute(
+          name: DashboardWidget.routeName,
+          path: DashboardWidget.routePath,
+          builder: (context, params) => DashboardWidget(),
+        ),
+        FFRoute(
+          name: CalendarioWidget.routeName,
+          path: CalendarioWidget.routePath,
+          builder: (context, params) => CalendarioWidget(),
+        ),
+        FFRoute(
+          name: EntregasWidget.routeName,
+          path: EntregasWidget.routePath,
+          builder: (context, params) => EntregasWidget(),
+        ),
+        FFRoute(
+          name: ClasesWidget.routeName,
+          path: ClasesWidget.routePath,
+          builder: (context, params) => ClasesWidget(),
+        ),
+        FFRoute(
+          name: CalificacionesWidget.routeName,
+          path: CalificacionesWidget.routePath,
+          builder: (context, params) => CalificacionesWidget(),
+        ),
+        FFRoute(
+          name: AjustesWidget.routeName,
+          path: AjustesWidget.routePath,
+          builder: (context, params) => AjustesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
