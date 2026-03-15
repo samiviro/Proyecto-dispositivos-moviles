@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'login_model.dart';
@@ -71,7 +72,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 1.0,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primaryText,
+                  color: Color(0xFF101315),
                 ),
               ),
             ),
@@ -100,6 +101,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                               'assets/images/unnamed.png',
                             ).image,
                           ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(0.0),
+                            bottomRight: Radius.circular(0.0),
+                            topLeft: Radius.circular(0.0),
+                            topRight: Radius.circular(0.0),
+                          ),
                         ),
                       ),
                     ),
@@ -118,8 +125,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .bodyMedium
                                     .fontStyle,
                               ),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: Colors.white,
                               fontSize: 13.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
@@ -224,8 +230,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .bodyMedium
                                     .fontStyle,
                               ),
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                              color: Colors.white,
                               fontSize: 11.0,
                               letterSpacing: 0.0,
                               fontWeight: FlutterFlowTheme.of(context)
@@ -256,8 +261,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .bodyMedium
                                     .fontStyle,
                               ),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: Colors.white,
                               fontSize: 13.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
@@ -375,8 +379,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .bodyMedium
                                     .fontStyle,
                               ),
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                              color: Colors.white,
                               fontSize: 11.0,
                               letterSpacing: 0.0,
                               fontWeight: FlutterFlowTheme.of(context)
@@ -396,8 +399,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                   Padding(
                     padding: EdgeInsets.all(6.0),
                     child: FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        context.pushNamed(DashboardWidget.routeName);
                       },
                       text: 'Log In',
                       options: FFButtonOptions(
