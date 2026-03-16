@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -48,32 +49,44 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: DashboardWidget.routeName,
           path: DashboardWidget.routePath,
-          builder: (context, params) => DashboardWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'dashboard')
+              : DashboardWidget(),
         ),
         FFRoute(
           name: CalendarioWidget.routeName,
           path: CalendarioWidget.routePath,
-          builder: (context, params) => CalendarioWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'calendario')
+              : CalendarioWidget(),
         ),
         FFRoute(
           name: EntregasWidget.routeName,
           path: EntregasWidget.routePath,
-          builder: (context, params) => EntregasWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'entregas')
+              : EntregasWidget(),
         ),
         FFRoute(
           name: ClasesWidget.routeName,
           path: ClasesWidget.routePath,
-          builder: (context, params) => ClasesWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'clases')
+              : ClasesWidget(),
         ),
         FFRoute(
           name: CalificacionesWidget.routeName,
           path: CalificacionesWidget.routePath,
-          builder: (context, params) => CalificacionesWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'calificaciones')
+              : CalificacionesWidget(),
         ),
         FFRoute(
           name: AjustesWidget.routeName,
           path: AjustesWidget.routePath,
-          builder: (context, params) => AjustesWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'ajustes')
+              : AjustesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
