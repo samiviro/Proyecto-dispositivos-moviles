@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'login_model.dart';
 export 'login_model.dart';
@@ -241,6 +242,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   .fontStyle,
                             ),
                         textAlign: TextAlign.start,
+                        keyboardType: TextInputType.emailAddress,
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
                         enableInteractiveSelection: true,
                         validator: _model.textController1Validator
@@ -389,6 +391,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   .bodyMedium
                                   .fontStyle,
                             ),
+                        maxLength: 8,
+                        maxLengthEnforcement: MaxLengthEnforcement.enforced,
+                        buildCounter: (context,
+                                {required currentLength,
+                                required isFocused,
+                                maxLength}) =>
+                            null,
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
                         enableInteractiveSelection: true,
                         validator: _model.textController2Validator
@@ -431,6 +440,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                         elevation: 0.0,
                         borderRadius: BorderRadius.circular(8.0),
+                        hoverColor: Color(0xFF010B67),
                       ),
                     ),
                   ),
