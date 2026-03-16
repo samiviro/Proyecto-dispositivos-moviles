@@ -41,8 +41,8 @@ class _EntregasWidgetState extends State<EntregasWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFF0F0F0F),
-      body: SafeArea(
-        top: true,
+      body: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 39.0, 0.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -129,7 +129,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                       .labelMedium
                                       .fontStyle,
                                 ),
-                            hintText: 'Search tasks...',
+                            hintText: 'Buscar...',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -232,7 +232,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 8.0, 16.0, 8.0),
                         child: Text(
-                          'All (6)',
+                          'Todos',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     font: GoogleFonts.inter(
@@ -285,7 +285,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 8.0, 16.0, 8.0),
                                 child: Text(
-                                  'Not Started (4) ',
+                                  'No iniciado',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -339,7 +339,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 8.0, 16.0, 8.0),
                             child: Text(
-                              'Progress',
+                              'En progreso',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -414,7 +414,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Lab Report',
+                                    'Entrega',
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -457,7 +457,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 3.0, 0.0, 0.0),
                                       child: Text(
-                                        'Biology 101',
+                                        'Materia     ',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -631,7 +631,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      'Math Problem Set',
+                                      'Entrega',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -675,7 +675,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Text(
-                                          'Calculus II',
+                                          'Materia  ',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -852,7 +852,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      'Review Lecture Notes',
+                                      'Entrega',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -896,7 +896,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Text(
-                                          'Psychology 101',
+                                          'Materia          ',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1073,7 +1073,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      'Lab Exhibition',
+                                      'Entrega',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -1117,7 +1117,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Text(
-                                          'Biology 101',
+                                          'Materia    ',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1294,7 +1294,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      'Matt Exam',
+                                      'Entrega',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -1338,7 +1338,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Text(
-                                          'Calculus II',
+                                          'Materia',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
