@@ -44,6 +44,7 @@ class _EntregasWidgetState extends State<EntregasWidget> {
       body: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(0.0, 39.0, 0.0, 0.0),
         child: SingleChildScrollView(
+          primary: false,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
