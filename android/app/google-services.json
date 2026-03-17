@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "896392051078",
+    "project_id": "fidelitas-redi",
+    "storage_bucket": "fidelitas-redi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896392051078:android:34a24a61c6a1d490d2d407",
+        "android_client_info": {
+          "package_name": "com.mycompany.icmt26proyecto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTspW0kcaY_aOGbwLnsBaNWJlDYCvHsxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
