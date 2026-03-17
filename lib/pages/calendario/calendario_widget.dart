@@ -53,9 +53,9 @@ class _CalendarioWidgetState extends State<CalendarioWidget>
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: Color(0xFF0B0D0D),
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: Color(0xFF0B0D0D),
           automaticallyImplyLeading: false,
           title: Text(
             'Calendario',
@@ -163,8 +163,7 @@ class _CalendarioWidgetState extends State<CalendarioWidget>
                         labelColor: FlutterFlowTheme.of(context).primaryText,
                         unselectedLabelColor:
                             FlutterFlowTheme.of(context).secondaryText,
-                        backgroundColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
+                        backgroundColor: Color(0xFF0B0D0D),
                         unselectedBackgroundColor:
                             FlutterFlowTheme.of(context).alternate,
                         borderColor: FlutterFlowTheme.of(context).alternate,

@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'auth/firebase_auth/firebase_user_provider.dart';
+import 'auth/firebase_auth/auth_util.dart';
+
+import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
+
+  await initFirebase();
 
   await FlutterFlowTheme.initialize();
 
@@ -43,12 +50,23 @@ class _MyAppState extends State<MyApp> {
       _router.routerDelegate.currentConfiguration.matches
           .map((e) => getRoute(e))
           .toList();
+  late Stream<BaseAuthUser> userStream;
+
   @override
   void initState() {
     super.initState();
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
+    userStream = icmt26ProyectoFirebaseUserStream()
+      ..listen((user) {
+        _appStateNotifier.update(user);
+      });
+    jwtTokenStream.listen((_) {});
+    Future.delayed(
+      Duration(milliseconds: 1000),
+      () => _appStateNotifier.stopShowingSplashImage(),
+    );
   }
 
   void setThemeMode(ThemeMode mode) => safeSetState(() {
@@ -130,11 +148,11 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
-        backgroundColor: Color(0xFF1E1E1E),
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         selectedItemColor: FlutterFlowTheme.of(context).primary,
         unselectedItemColor: FlutterFlowTheme.of(context).secondaryText,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -142,7 +160,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.home_outlined,
               size: 24.0,
             ),
-            label: 'Home',
+            label: 'Inicio',
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -154,12 +172,12 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.date_range_rounded,
               size: 32.0,
             ),
-            label: 'calendar',
+            label: 'Calendario',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.list_alt,
+              Icons.assignment,
               size: 24.0,
             ),
             label: 'Entregas',
@@ -170,15 +188,15 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.library_books_outlined,
               size: 24.0,
             ),
-            label: 'Courses',
+            label: 'Clases',
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.stacked_bar_chart_outlined,
+            icon: FaIcon(
+              FontAwesomeIcons.graduationCap,
               size: 24.0,
             ),
-            label: 'calificaciones',
+            label: 'Calificaciones',
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -186,7 +204,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.settings,
               size: 24.0,
             ),
-            label: 'settings',
+            label: 'Ajustes',
             tooltip: '',
           )
         ],

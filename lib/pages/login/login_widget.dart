@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -28,10 +29,10 @@ class _LoginWidgetState extends State<LoginWidget> {
     super.initState();
     _model = createModel(context, () => LoginModel());
 
-    _model.textController1 ??= TextEditingController();
+    _model.emailTextController ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
   }
 
@@ -69,11 +70,14 @@ class _LoginWidgetState extends State<LoginWidget> {
             ),
             Opacity(
               opacity: 0.7,
-              child: Container(
-                width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 1.0,
-                decoration: BoxDecoration(
-                  color: Color(0xFF101315),
+              child: Align(
+                alignment: AlignmentDirectional(0.0, 0.0),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: MediaQuery.sizeOf(context).height * 1.0,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF101315),
+                  ),
                 ),
               ),
             ),
@@ -113,12 +117,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-0.4, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         'Correo',
-                        textAlign: TextAlign.start,
+                        textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               font: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
@@ -127,7 +131,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .fontStyle,
                               ),
                               color: Colors.white,
-                              fontSize: 13.0,
+                              fontSize: 20.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                               fontStyle: FlutterFlowTheme.of(context)
@@ -139,11 +143,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
                     child: Container(
-                      width: 200.0,
+                      width: MediaQuery.sizeOf(context).width * 0.7,
                       child: TextFormField(
-                        controller: _model.textController1,
+                        controller: _model.emailTextController,
                         focusNode: _model.textFieldFocusNode1,
                         autofocus: false,
                         enabled: true,
@@ -174,19 +178,15 @@ class _LoginWidgetState extends State<LoginWidget> {
                           hintStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
+                                      fontWeight: FontWeight.w500,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .fontStyle,
                                     ),
                                     color: Color(0xFFACACAC),
-                                    fontSize: 11.0,
+                                    fontSize: 13.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
+                                    fontWeight: FontWeight.w500,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .fontStyle,
@@ -224,9 +224,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               font: GoogleFonts.inter(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontWeight,
+                                fontWeight: FontWeight.normal,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .fontStyle,
@@ -234,28 +232,28 @@ class _LoginWidgetState extends State<LoginWidget> {
                               color: Colors.white,
                               fontSize: 11.0,
                               letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontWeight,
+                              fontWeight: FontWeight.normal,
                               fontStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .fontStyle,
                             ),
                         textAlign: TextAlign.start,
+                        maxLines: null,
                         keyboardType: TextInputType.emailAddress,
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
                         enableInteractiveSelection: true,
-                        validator: _model.textController1Validator
+                        validator: _model.emailTextControllerValidator
                             .asValidator(context),
                       ),
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-0.4, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding: EdgeInsets.all(4.0),
                       child: Text(
                         'Contraseña',
+                        textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               font: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
@@ -264,7 +262,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .fontStyle,
                               ),
                               color: Colors.white,
-                              fontSize: 13.0,
+                              fontSize: 20.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                               fontStyle: FlutterFlowTheme.of(context)
@@ -276,11 +274,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 50.0),
                     child: Container(
-                      width: 200.0,
+                      width: MediaQuery.sizeOf(context).width * 0.7,
                       child: TextFormField(
-                        controller: _model.textController2,
+                        controller: _model.passwordTextController,
                         focusNode: _model.textFieldFocusNode2,
                         autofocus: false,
                         enabled: true,
@@ -310,19 +308,15 @@ class _LoginWidgetState extends State<LoginWidget> {
                           hintStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
+                                      fontWeight: FontWeight.w500,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .fontStyle,
                                     ),
                                     color: Color(0xFFACACAC),
-                                    fontSize: 11.0,
+                                    fontSize: 13.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
+                                    fontWeight: FontWeight.w500,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .fontStyle,
@@ -382,7 +376,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .fontStyle,
                               ),
                               color: Colors.white,
-                              fontSize: 11.0,
+                              fontSize: 2.0,
                               letterSpacing: 0.0,
                               fontWeight: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -400,7 +394,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             null,
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
                         enableInteractiveSelection: true,
-                        validator: _model.textController2Validator
+                        validator: _model.passwordTextControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -409,11 +403,24 @@ class _LoginWidgetState extends State<LoginWidget> {
                     padding: EdgeInsets.all(6.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed(DashboardWidget.routeName);
+                        GoRouter.of(context).prepareAuthEvent();
+
+                        final user = await authManager.signInWithEmail(
+                          context,
+                          _model.emailTextController.text,
+                          _model.passwordTextController.text,
+                        );
+                        if (user == null) {
+                          return;
+                        }
+
+                        context.goNamedAuth(
+                            DashboardWidget.routeName, context.mounted);
                       },
-                      text: 'Log In',
+                      text: 'Ingresar',
                       options: FFButtonOptions(
-                        height: 40.0,
+                        width: MediaQuery.sizeOf(context).width * 0.6,
+                        height: 50.0,
                         padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
