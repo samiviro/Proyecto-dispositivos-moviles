@@ -145,6 +145,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'clases': ClasesWidget(),
       'calificaciones': CalificacionesWidget(),
       'ajustes': AjustesWidget(),
+      'clasesCopy': ClasesCopyWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -214,6 +215,14 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: 'Ajustes',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.library_books_outlined,
+              size: 24.0,
+            ),
+            label: 'Clases',
             tooltip: '',
           )
         ],

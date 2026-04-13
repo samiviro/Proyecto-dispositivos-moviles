@@ -153,6 +153,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: NotificacionesWidget.routeName,
           path: NotificacionesWidget.routePath,
           builder: (context, params) => NotificacionesWidget(),
+        ),
+        FFRoute(
+          name: ClasesCopyWidget.routeName,
+          path: ClasesCopyWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'clasesCopy')
+              : ClasesCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
