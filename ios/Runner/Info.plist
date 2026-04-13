@@ -54,7 +54,12 @@
 	<true/>
 
 
-
+	<key>NSCalendarsUsageDescription</key>
+    <string>Permiso para acceder a calendario</string>
+	<key>PermissionGroupNotification</key>
+    <string>Permiso para enviar notificaciones</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>Permiso para acceder a la Galeria</string>
 
 
 

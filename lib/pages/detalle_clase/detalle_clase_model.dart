@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'clases_widget.dart' show ClasesWidget;
+import 'detalle_clase_widget.dart' show DetalleClaseWidget;
 import 'package:flutter/material.dart';
 
-class ClasesModel extends FlutterFlowModel<ClasesWidget> {
+class DetalleClaseModel extends FlutterFlowModel<DetalleClaseWidget> {
   @override
   void initState(BuildContext context) {}
 

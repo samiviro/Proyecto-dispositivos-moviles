@@ -7,3 +7,6 @@ export '/pages/clases/clases_widget.dart' show ClasesWidget;
 export '/pages/calificaciones/calificaciones_widget.dart'
     show CalificacionesWidget;
 export '/pages/ajustes/ajustes_widget.dart' show AjustesWidget;
+export '/pages/detalle_clase/detalle_clase_widget.dart' show DetalleClaseWidget;
+export '/editar_perfil/editar_perfil_widget.dart' show EditarPerfilWidget;
+export '/notificaciones/notificaciones_widget.dart' show NotificacionesWidget;

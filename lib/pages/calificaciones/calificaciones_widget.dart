@@ -43,14 +43,14 @@ class _CalificacionesWidgetState extends State<CalificacionesWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF0B0D0D),
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Align(
               alignment: AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 80.0, 0.0, 0.0),
                 child: Text(
                   'Calificaciones',
                   textAlign: TextAlign.start,
@@ -79,12 +79,12 @@ class _CalificacionesWidgetState extends State<CalificacionesWidget> {
                     width: 100.0,
                     height: 100.0,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).alternate,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10.0),
-                        bottomRight: Radius.circular(10.0),
                         topLeft: Radius.circular(10.0),
                         topRight: Radius.circular(10.0),
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0),
                       ),
                     ),
                     child: Column(
@@ -180,12 +180,12 @@ class _CalificacionesWidgetState extends State<CalificacionesWidget> {
                     width: 100.0,
                     height: 100.0,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).alternate,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10.0),
-                        bottomRight: Radius.circular(10.0),
                         topLeft: Radius.circular(10.0),
                         topRight: Radius.circular(10.0),
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0),
                       ),
                     ),
                     child: Column(
@@ -283,12 +283,12 @@ class _CalificacionesWidgetState extends State<CalificacionesWidget> {
                     width: 100.0,
                     height: 100.0,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).alternate,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10.0),
-                        bottomRight: Radius.circular(10.0),
                         topLeft: Radius.circular(10.0),
                         topRight: Radius.circular(10.0),
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0),
                       ),
                     ),
                     child: Column(
@@ -388,7 +388,189 @@ class _CalificacionesWidgetState extends State<CalificacionesWidget> {
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
-              children: [],
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 0.0, 0.0),
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width * 0.3,
+                    height: 60.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).alternate,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50.0),
+                        topRight: Radius.circular(50.0),
+                        bottomLeft: Radius.circular(50.0),
+                        bottomRight: Radius.circular(50.0),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        FlutterFlowIconButton(
+                          borderRadius: 8.0,
+                          buttonSize: 40.0,
+                          fillColor: FlutterFlowTheme.of(context).primary,
+                          icon: Icon(
+                            Icons.check_circle_sharp,
+                            color: FlutterFlowTheme.of(context).info,
+                            size: 24.0,
+                          ),
+                          onPressed: () {
+                            print('IconButton pressed ...');
+                          },
+                        ),
+                        Text(
+                          'Aprobadas',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 0.0, 0.0),
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width * 0.3,
+                    height: 60.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).alternate,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50.0),
+                        topRight: Radius.circular(50.0),
+                        bottomLeft: Radius.circular(50.0),
+                        bottomRight: Radius.circular(50.0),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        FlutterFlowIconButton(
+                          borderRadius: 8.0,
+                          buttonSize: 40.0,
+                          fillColor: FlutterFlowTheme.of(context).primary,
+                          icon: Icon(
+                            Icons.timer_sharp,
+                            color: FlutterFlowTheme.of(context).info,
+                            size: 24.0,
+                          ),
+                          onPressed: () {
+                            print('IconButton pressed ...');
+                          },
+                        ),
+                        Text(
+                          'En curso',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 0.0, 0.0),
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width * 0.3,
+                    height: 60.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).alternate,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50.0),
+                        topRight: Radius.circular(50.0),
+                        bottomLeft: Radius.circular(50.0),
+                        bottomRight: Radius.circular(50.0),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        FlutterFlowIconButton(
+                          borderRadius: 8.0,
+                          buttonSize: 40.0,
+                          fillColor: FlutterFlowTheme.of(context).primary,
+                          icon: Icon(
+                            Icons.pie_chart_rounded,
+                            color: FlutterFlowTheme.of(context).info,
+                            size: 24.0,
+                          ),
+                          onPressed: () {
+                            print('IconButton pressed ...');
+                          },
+                        ),
+                        Text(
+                          'Reprobadas',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+              child: Container(
+                width: MediaQuery.sizeOf(context).width * 0.8,
+                height: 350.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(60.0),
+                    topRight: Radius.circular(60.0),
+                    bottomLeft: Radius.circular(60.0),
+                    bottomRight: Radius.circular(60.0),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

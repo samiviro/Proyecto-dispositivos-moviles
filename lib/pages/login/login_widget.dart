@@ -106,12 +106,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               'assets/images/unnamed.png',
                             ).image,
                           ),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0.0),
-                            bottomRight: Radius.circular(0.0),
-                            topLeft: Radius.circular(0.0),
-                            topRight: Radius.circular(0.0),
-                          ),
+                          borderRadius: BorderRadius.only(),
                         ),
                       ),
                     ),
@@ -376,7 +371,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .fontStyle,
                               ),
                               color: Colors.white,
-                              fontSize: 2.0,
+                              fontSize: 14.0,
                               letterSpacing: 0.0,
                               fontWeight: FlutterFlowTheme.of(context)
                                   .bodyMedium
