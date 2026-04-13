@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'entregas_model.dart';
@@ -602,116 +603,44 @@ class _EntregasWidgetState extends State<EntregasWidget> {
                                             ],
                                           ),
                                         ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 5.0, 0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Icon(
-                                                Icons.calendar_month,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 20.0,
-                                              ),
-                                              Text(
-                                                valueOrDefault<String>(
-                                                  columnTareasRecord
-                                                      ?.fechaEntrega
-                                                      ?.toString(),
-                                                  'fecha entrega',
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.inter(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      fontSize: 12.0,
-                                                      letterSpacing: 2.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        20.0, 0.0, 0.0, 0.0),
-                                                child: Icon(
-                                                  Icons.schedule,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 20.0,
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                              child: Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        0.3,
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height *
+                                                        0.04,
+                                                child: custom_widgets
+                                                    .DeadlineCountdownChip(
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.3,
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          0.04,
+                                                  deadlineDate: dateTimeFormat(
+                                                      "yyyy-MM-dd\'T\'HH:mm:ss",
+                                                      columnTareasRecord!
+                                                          .fechaEntrega!),
+                                                  showIcon: true,
                                                 ),
                                               ),
-                                              Text(
-                                                valueOrDefault<String>(
-                                                  columnTareasRecord
-                                                      ?.tiempoEstimado
-                                                      ?.toString(),
-                                                  'tiempo estimado',
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.inter(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      fontSize: 12.0,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ].divide(SizedBox(width: 5.0)),
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     );
