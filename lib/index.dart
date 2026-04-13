@@ -10,3 +10,4 @@ export '/pages/ajustes/ajustes_widget.dart' show AjustesWidget;
 export '/pages/detalle_clase/detalle_clase_widget.dart' show DetalleClaseWidget;
 export '/editar_perfil/editar_perfil_widget.dart' show EditarPerfilWidget;
 export '/notificaciones/notificaciones_widget.dart' show NotificacionesWidget;
+export '/pages/clases_copy/clases_copy_widget.dart' show ClasesCopyWidget;
