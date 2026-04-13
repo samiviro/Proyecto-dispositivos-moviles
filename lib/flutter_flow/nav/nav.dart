@@ -131,6 +131,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'ajustes')
               : AjustesWidget(),
+        ),
+        FFRoute(
+          name: DetalleClaseWidget.routeName,
+          path: DetalleClaseWidget.routePath,
+          builder: (context, params) => DetalleClaseWidget(
+            materias: params.getParam(
+              'materias',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['materias'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: EditarPerfilWidget.routeName,
+          path: EditarPerfilWidget.routePath,
+          builder: (context, params) => EditarPerfilWidget(),
+        ),
+        FFRoute(
+          name: NotificacionesWidget.routeName,
+          path: NotificacionesWidget.routePath,
+          builder: (context, params) => NotificacionesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -249,6 +271,7 @@ class FFParameters {
     String paramName,
     ParamType type, {
     bool isList = false,
+    List<String>? collectionNamePath,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -266,6 +289,7 @@ class FFParameters {
       param,
       type,
       isList,
+      collectionNamePath: collectionNamePath,
     );
   }
 }
