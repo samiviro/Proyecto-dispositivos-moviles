@@ -5,13 +5,13 @@ Future initFirebase() async {
   if (kIsWeb) {
     await Firebase.initializeApp(
         options: FirebaseOptions(
-            apiKey: "AIzaSyDAS9pWA4tc4-2VJxqDmXs_8Bg8rMEjV-A",
-            authDomain: "fidelitas-redi.firebaseapp.com",
-            projectId: "fidelitas-redi",
-            storageBucket: "fidelitas-redi.firebasestorage.app",
-            messagingSenderId: "896392051078",
-            appId: "1:896392051078:web:ff8e3038eb322165d2d407",
-            measurementId: "G-HZKRNEJ8FR"));
+            apiKey: "AIzaSyCCuZLaYXTf8xCifHtrAaqfkH8MA8P_b3A",
+            authDomain: "fide-ea10c.firebaseapp.com",
+            projectId: "fide-ea10c",
+            storageBucket: "fide-ea10c.firebasestorage.app",
+            messagingSenderId: "693296645908",
+            appId: "1:693296645908:web:b8ae7ef13feb58e399e401",
+            measurementId: "G-V8CN09M5P8"));
   } else {
     await Firebase.initializeApp();
   }

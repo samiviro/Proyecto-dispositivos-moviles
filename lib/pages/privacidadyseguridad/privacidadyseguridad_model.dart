@@ -1,9 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'ajustes_widget.dart' show AjustesWidget;
+import 'privacidadyseguridad_widget.dart' show PrivacidadyseguridadWidget;
 import 'package:flutter/material.dart';
 
-class AjustesModel extends FlutterFlowModel<AjustesWidget> {
+class PrivacidadyseguridadModel
+    extends FlutterFlowModel<PrivacidadyseguridadWidget> {
   @override
   void initState(BuildContext context) {}
 

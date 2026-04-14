@@ -29,11 +29,11 @@ class _LoginWidgetState extends State<LoginWidget> {
     super.initState();
     _model = createModel(context, () => LoginModel());
 
-    _model.emailTextController ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.inputEmailTextController ??= TextEditingController();
+    _model.inputEmailFocusNode ??= FocusNode();
 
-    _model.passwordTextController ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.inputPasswordTextController ??= TextEditingController();
+    _model.inputPasswordFocusNode ??= FocusNode();
   }
 
   @override
@@ -142,8 +142,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 0.7,
                       child: TextFormField(
-                        controller: _model.emailTextController,
-                        focusNode: _model.textFieldFocusNode1,
+                        controller: _model.inputEmailTextController,
+                        focusNode: _model.inputEmailFocusNode,
                         autofocus: false,
                         enabled: true,
                         obscureText: false,
@@ -237,7 +237,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         keyboardType: TextInputType.emailAddress,
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
                         enableInteractiveSelection: true,
-                        validator: _model.emailTextControllerValidator
+                        validator: _model.inputEmailTextControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -273,11 +273,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 0.7,
                       child: TextFormField(
-                        controller: _model.passwordTextController,
-                        focusNode: _model.textFieldFocusNode2,
+                        controller: _model.inputPasswordTextController,
+                        focusNode: _model.inputPasswordFocusNode,
                         autofocus: false,
                         enabled: true,
-                        obscureText: !_model.passwordVisibility,
+                        obscureText: !_model.inputPasswordVisibility,
                         decoration: InputDecoration(
                           isDense: true,
                           labelStyle:
@@ -348,12 +348,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                           fillColor: Color(0xFF1E1E1E),
                           suffixIcon: InkWell(
                             onTap: () async {
-                              safeSetState(() => _model.passwordVisibility =
-                                  !_model.passwordVisibility);
+                              safeSetState(() =>
+                                  _model.inputPasswordVisibility =
+                                      !_model.inputPasswordVisibility);
                             },
                             focusNode: FocusNode(skipTraversal: true),
                             child: Icon(
-                              _model.passwordVisibility
+                              _model.inputPasswordVisibility
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
                               color: Color(0xFFACACAC),
@@ -389,7 +390,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             null,
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
                         enableInteractiveSelection: true,
-                        validator: _model.passwordTextControllerValidator
+                        validator: _model.inputPasswordTextControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -402,15 +403,15 @@ class _LoginWidgetState extends State<LoginWidget> {
 
                         final user = await authManager.signInWithEmail(
                           context,
-                          _model.emailTextController.text,
-                          _model.passwordTextController.text,
+                          _model.inputEmailTextController.text,
+                          _model.inputPasswordTextController.text,
                         );
                         if (user == null) {
                           return;
                         }
 
                         context.goNamedAuth(
-                            DashboardWidget.routeName, context.mounted);
+                            MainWidget.routeName, context.mounted);
                       },
                       text: 'Ingresar',
                       options: FFButtonOptions(

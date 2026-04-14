@@ -35,11 +35,23 @@ class MateriasRecord extends FirestoreRecord {
   String get horario => _horario ?? '';
   bool hasHorario() => _horario != null;
 
+  // "notas" field.
+  DocumentReference? _notas;
+  DocumentReference? get notas => _notas;
+  bool hasNotas() => _notas != null;
+
+  // "meetingUrl" field.
+  String? _meetingUrl;
+  String get meetingUrl => _meetingUrl ?? '';
+  bool hasMeetingUrl() => _meetingUrl != null;
+
   void _initializeFields() {
     _nombreMateria = snapshotData['nombreMateria'] as String?;
     _codigo = snapshotData['codigo'] as String?;
     _nombreProfesor = snapshotData['nombreProfesor'] as String?;
     _horario = snapshotData['horario'] as String?;
+    _notas = snapshotData['notas'] as DocumentReference?;
+    _meetingUrl = snapshotData['meetingUrl'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -81,6 +93,8 @@ Map<String, dynamic> createMateriasRecordData({
   String? codigo,
   String? nombreProfesor,
   String? horario,
+  DocumentReference? notas,
+  String? meetingUrl,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -88,6 +102,8 @@ Map<String, dynamic> createMateriasRecordData({
       'codigo': codigo,
       'nombreProfesor': nombreProfesor,
       'horario': horario,
+      'notas': notas,
+      'meetingUrl': meetingUrl,
     }.withoutNulls,
   );
 
@@ -102,12 +118,20 @@ class MateriasRecordDocumentEquality implements Equality<MateriasRecord> {
     return e1?.nombreMateria == e2?.nombreMateria &&
         e1?.codigo == e2?.codigo &&
         e1?.nombreProfesor == e2?.nombreProfesor &&
-        e1?.horario == e2?.horario;
+        e1?.horario == e2?.horario &&
+        e1?.notas == e2?.notas &&
+        e1?.meetingUrl == e2?.meetingUrl;
   }
 
   @override
-  int hash(MateriasRecord? e) => const ListEquality()
-      .hash([e?.nombreMateria, e?.codigo, e?.nombreProfesor, e?.horario]);
+  int hash(MateriasRecord? e) => const ListEquality().hash([
+        e?.nombreMateria,
+        e?.codigo,
+        e?.nombreProfesor,
+        e?.horario,
+        e?.notas,
+        e?.meetingUrl
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is MateriasRecord;

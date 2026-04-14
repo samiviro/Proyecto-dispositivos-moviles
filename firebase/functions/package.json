@@ -23,10 +23,10 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint --max-warnings=0 .",
-    "serve": "firebase -P fidelitas-redi emulators:start --only functions",
-    "shell": "firebase -P fidelitas-redi functions:shell",
+    "serve": "firebase -P fide-ea10c emulators:start --only functions",
+    "shell": "firebase -P fide-ea10c functions:shell",
     "start": "npm run shell",
-    "logs": "firebase -P fidelitas-redi functions:log",
+    "logs": "firebase -P fide-ea10c functions:log",
     "compile": "cp ../../tsconfig.template.json ./tsconfig-compile.json && tsc --project tsconfig-compile.json"
   },
   "engines": {

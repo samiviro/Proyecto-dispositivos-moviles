@@ -5,17 +5,17 @@ import 'package:flutter/material.dart';
 class EntregasModel extends FlutterFlowModel<EntregasWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  // State field(s) for inputSearch widget.
+  FocusNode? inputSearchFocusNode;
+  TextEditingController? inputSearchTextController;
+  String? Function(BuildContext, String?)? inputSearchTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+    inputSearchFocusNode?.dispose();
+    inputSearchTextController?.dispose();
   }
 }
