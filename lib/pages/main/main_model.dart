@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dashboard_widget.dart' show DashboardWidget;
+import '/index.dart';
+import 'main_widget.dart' show MainWidget;
 import 'package:flutter/material.dart';
 
-class DashboardModel extends FlutterFlowModel<DashboardWidget> {
+class MainModel extends FlutterFlowModel<MainWidget> {
   @override
   void initState(BuildContext context) {}
 

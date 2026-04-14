@@ -10,6 +10,8 @@ import 'schema/materias_record.dart';
 import 'schema/tareas_record.dart';
 import 'schema/entregas_record.dart';
 import 'schema/eventos_record.dart';
+import 'schema/notas_record.dart';
+import 'schema/inscripciones_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -23,6 +25,8 @@ export 'schema/materias_record.dart';
 export 'schema/tareas_record.dart';
 export 'schema/entregas_record.dart';
 export 'schema/eventos_record.dart';
+export 'schema/notas_record.dart';
+export 'schema/inscripciones_record.dart';
 
 /// Functions to query UsuariosRecords (as a Stream and as a Future).
 Future<int> queryUsuariosRecordCount({
@@ -204,6 +208,80 @@ Future<List<EventosRecord>> queryEventosRecordOnce({
     queryCollectionOnce(
       EventosRecord.collection,
       EventosRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query NotasRecords (as a Stream and as a Future).
+Future<int> queryNotasRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      NotasRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<NotasRecord>> queryNotasRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      NotasRecord.collection,
+      NotasRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<NotasRecord>> queryNotasRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      NotasRecord.collection,
+      NotasRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query InscripcionesRecords (as a Stream and as a Future).
+Future<int> queryInscripcionesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      InscripcionesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<InscripcionesRecord>> queryInscripcionesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      InscripcionesRecord.collection,
+      InscripcionesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<InscripcionesRecord>> queryInscripcionesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      InscripcionesRecord.collection,
+      InscripcionesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

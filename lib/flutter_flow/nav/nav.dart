@@ -91,11 +91,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: DashboardWidget.routeName,
-          path: DashboardWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'dashboard')
-              : DashboardWidget(),
+          name: MainWidget.routeName,
+          path: MainWidget.routePath,
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'main') : MainWidget(),
         ),
         FFRoute(
           name: CalendarioWidget.routeName,
@@ -155,11 +154,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => NotificacionesWidget(),
         ),
         FFRoute(
+          name: PrivacidadyseguridadWidget.routeName,
+          path: PrivacidadyseguridadWidget.routePath,
+          builder: (context, params) => PrivacidadyseguridadWidget(),
+        ),
+        FFRoute(
+          name: WidgetpruebaWidget.routeName,
+          path: WidgetpruebaWidget.routePath,
+          builder: (context, params) => WidgetpruebaWidget(),
+        ),
+        FFRoute(
+          name: CambioContrasenaWidget.routeName,
+          path: CambioContrasenaWidget.routePath,
+          builder: (context, params) => CambioContrasenaWidget(),
+        ),
+        FFRoute(
           name: ClasesCopyWidget.routeName,
           path: ClasesCopyWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'clasesCopy')
-              : ClasesCopyWidget(),
+          builder: (context, params) => ClasesCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

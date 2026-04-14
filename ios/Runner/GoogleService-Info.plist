@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyCwExz5BpSGJQi55gk3sv2T8g0oxjZpPO0</string>
+	<string>AIzaSyDtCX8w-X4YmdLv6P-zrOth10gIz8pN7yw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>896392051078</string>
+	<string>693296645908</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.mycompany.icmt26proyecto</string>
 	<key>PROJECT_ID</key>
-	<string>fidelitas-redi</string>
+	<string>fide-ea10c</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fidelitas-redi.firebasestorage.app</string>
+	<string>fide-ea10c.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:896392051078:ios:1a28e1f86d0f3185d2d407</string>
+	<string>1:693296645908:ios:998fa52e465f68cf99e401</string>
 </dict>
 </plist>

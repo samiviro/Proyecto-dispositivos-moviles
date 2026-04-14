@@ -160,15 +160,15 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 15.0, 0.0),
-                                          child: Switch.adaptive(
+                                          child: Switch(
                                             value: _model.switchValue1!,
                                             onChanged: (newValue) async {
                                               safeSetState(() => _model
                                                   .switchValue1 = newValue);
                                             },
-                                            activeColor:
+                                            activeThumbColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .primary,
+                                                    .primaryText,
                                             activeTrackColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primary,
@@ -283,15 +283,15 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
-                                          child: Switch.adaptive(
+                                          child: Switch(
                                             value: _model.switchValue2!,
                                             onChanged: (newValue) async {
                                               safeSetState(() => _model
                                                   .switchValue2 = newValue);
                                             },
-                                            activeColor:
+                                            activeThumbColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .primary,
+                                                    .primaryText,
                                             activeTrackColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primary,
@@ -406,15 +406,15 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   60.0, 0.0, 0.0, 0.0),
-                                          child: Switch.adaptive(
+                                          child: Switch(
                                             value: _model.switchValue3!,
                                             onChanged: (newValue) async {
                                               safeSetState(() => _model
                                                   .switchValue3 = newValue);
                                             },
-                                            activeColor:
+                                            activeThumbColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .primary,
+                                                    .primaryText,
                                             activeTrackColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primary,
